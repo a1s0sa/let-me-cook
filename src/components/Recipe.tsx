@@ -1,7 +1,6 @@
 'use client'
 import { Recipes } from '@/schema/Recipe'
 import { v4 as uuid } from 'uuid'
-import { IngredientsSchema } from '@/schema/Ingredients'
 import { useRecipeStore } from '@/store/recipeStore'
 import { useState } from 'react'
 import { motion } from 'motion/react'

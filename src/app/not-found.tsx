@@ -14,10 +14,10 @@ export default function NotFound() {
             />
             <h1 className="text-6xl font-bold text-[#5e503f]">404</h1>
             <p className="text-2xl text-[#5e503f] font-medium">
-                Uh-oh! The recipe you're looking for isn't in the cookbook.
+                {"Uh-oh! The recipe you're looking for isn't in the cookbook."}
             </p>
             <p className="text-[#5e503f] max-w-md">
-                Our robot chef looked everywhere but couldn’t find this page.
+                {"Our robot chef looked everywhere but couldn't find this page."}
                 Try heading back to the kitchen.
             </p>
             <Link href="/">

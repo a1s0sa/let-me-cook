@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
+import { Toaster } from 'sonner'
 import { Quicksand, Pacifico } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
 
 const quicksand = Quicksand({ subsets: ['latin'] })
-const pacifico = Pacifico({ weight: '400', subsets: ['latin'], variable: "--pacifico" })
+const pacifico = Pacifico({
+    weight: '400',
+    subsets: ['latin'],
+    variable: '--pacifico',
+})
 
 export const metadata: Metadata = {
     title: 'Let me Cook',
@@ -32,6 +37,7 @@ export default function RootLayout({
             >
                 <Header />
                 {children}
+                <Toaster position="top-center" />
                 <Footer />
             </body>
         </html>

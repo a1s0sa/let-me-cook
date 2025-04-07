@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Toaster } from 'sonner'
+import { Analytics } from "@vercel/analytics/react"
 import { Quicksand, Pacifico } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -39,6 +40,7 @@ export default function RootLayout({
                 {children}
                 <Toaster position="top-center" />
                 <Footer />
+                <Analytics />
             </body>
         </html>
     )

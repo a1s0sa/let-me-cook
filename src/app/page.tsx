@@ -4,17 +4,17 @@ import Link from 'next/link'
 export default function Home() {
     return (
         <>
-            <section className="flex flex-col items-center justify-center text-center py-10 px-4">
-                <h1 className="cta text-4xl md:text-6xl font-bold mb-6">
+            <section className="flex flex-col items-center justify-center gap-5 text-center py-10 px-4">
+                <h1 className="cta text-5xl md:text-6xl font-bold">
                     Home-Cooked Magic
                 </h1>
-                <p className="text-lg md:text-xl max-w-xl mb-8 text-[#5C4A3C]">
+                <p className="text-lg md:text-xl max-w-xl text-[#5C4A3C]">
                     Discover and generate delicious recipes with the ingredients
                     you already have.
                 </p>
                 <Link href="/app">
-                    <button className="flex items-center bg-[#A37C40] text-white hover:bg-[#8a6836] px-6 py-3 text-lg rounded-2xl shadow-lg">
-                        Get Cooking <ArrowRight className="ml-2 h-5 w-5" />
+                    <button className="font-bold flex items-center bg-[#A37C40] text-white hover:bg-[#8a6836] px-6 py-3 text-lg rounded-2xl shadow-lg">
+                        Get Cooking <ArrowRight  />
                     </button>
                 </Link>
             </section>

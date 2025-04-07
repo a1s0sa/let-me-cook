@@ -12,7 +12,7 @@
 
 }
 
-.recipe > h2, .ingredients > h2, .recipe-placeholder, .recipe--name{
+.cta, .recipe > h2, .ingredients > h2, .recipe-placeholder, .recipe--name{
   font-family: var(--pacifico);
 }
 

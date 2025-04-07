@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Toaster } from 'sonner'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
 import { Quicksand, Pacifico } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -37,7 +37,8 @@ export default function RootLayout({
                 className={`${quicksand.className} ${pacifico.variable} antialiased max-w-[1024px] mx-auto`}
             >
                 <Header />
-                {children}
+                <main>{children}</main>
+
                 <Toaster position="top-center" />
                 <Footer />
                 <Analytics />

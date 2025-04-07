@@ -1,22 +1,54 @@
-import Recipes from '@/components/Recipe'
-import Ingredients from '@/components/Ingredients'
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+
 export default function Home() {
     return (
-        <main className="p-2 flex flex-col gap-4">
-            <p className="text-md font-semibold">
-                An AI-powered recipe generator that cooks up with creative
-                recipes, with available ingredients.
-            </p>
-            <div className="chef flex flex-col md:flex-row gap-4">
-                <div className="bg-[#fff1e6] rounded-2xl shadow-md p-6 flex md:w-[47.5%] flex-col gap-6 ingredients">
-                    <h2 className={`text-2xl underline`}>Ingredients</h2>
-                    <Ingredients />
+        <>
+            <section className="flex flex-col items-center justify-center text-center py-10 px-4">
+                <h1 className="cta text-4xl md:text-6xl font-bold mb-6">
+                    Home-Cooked Magic
+                </h1>
+                <p className="text-lg md:text-xl max-w-xl mb-8 text-[#5C4A3C]">
+                    Discover and generate delicious recipes with the ingredients
+                    you already have.
+                </p>
+                <Link href="/app">
+                    <button className="flex items-center bg-[#A37C40] text-white hover:bg-[#8a6836] px-6 py-3 text-lg rounded-2xl shadow-lg">
+                        Get Cooking <ArrowRight className="ml-2 h-5 w-5" />
+                    </button>
+                </Link>
+            </section>
+
+            {/* Features */}
+            <section className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+                <div className="bg-white p-6 rounded-2xl shadow-md text-left">
+                    <h3 className="text-xl font-semibold mb-2 text-[#3E2C1C]">
+                        Smart Ingredient Input
+                    </h3>
+                    <p className="text-[#5C4A3C]">
+                        Tell us what you have — we’ll tell you what you can
+                        make.
+                    </p>
                 </div>
-                <div className="bg-[#fff1e6] rounded-2xl shadow-md p-6 recipe md:w-[47.5%] flex flex-col gap-4">
-                    <h2 className={`text-2xl underline`}>Recipes</h2>
-                    <Recipes />
+                <div className="bg-white p-6 rounded-2xl shadow-md text-left">
+                    <h3 className="text-xl font-semibold mb-2 text-[#3E2C1C]">
+                        Recipe Variations
+                    </h3>
+                    <p className="text-[#5C4A3C]">
+                        Get multiple recipe options, from classic to creative,
+                        all personalized.
+                    </p>
                 </div>
-            </div>
-        </main>
+                <div className="bg-white p-6 rounded-2xl shadow-md text-left">
+                    <h3 className="text-xl font-semibold mb-2 text-[#3E2C1C]">
+                        Minimal Waste
+                    </h3>
+                    <p className="text-[#5C4A3C]">
+                        Cook with what you have, reduce food waste, and still
+                        eat well.
+                    </p>
+                </div>
+            </section>
+        </>
     )
 }

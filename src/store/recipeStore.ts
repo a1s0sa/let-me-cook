@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { v4 as uuid } from 'uuid'
 import { Ingredients } from '@/schema/Ingredients'
 
 type RecipeStore = {
@@ -8,8 +9,8 @@ type RecipeStore = {
 
 export const useRecipeStore = create<RecipeStore>((set) => ({
     ingredients: [
-        { name: 'eggs', quantity: '2', id: 1 },
-        { name: '', quantity: '', id: 2 },
+        { name: 'eggs', quantity: '2', id: uuid() },
+        { name: '', quantity: '', id: uuid() },
     ],
     setIngredients: (newState) => set({ ingredients: newState }),
 }))

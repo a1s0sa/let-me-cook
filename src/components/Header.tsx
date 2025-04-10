@@ -8,7 +8,10 @@ export default function Header() {
     console.log(pathName)
     return (
         <header>
-            <Link href="/" className="flex shadow-md justify-center gap-2 p-2 items-center">
+            <Link
+                href="/"
+                className="flex shadow-md justify-center gap-2 p-2 items-center"
+            >
                 <Image
                     src="/robo-chef.png"
                     alt="robo-chef"

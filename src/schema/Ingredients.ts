@@ -1,16 +1,16 @@
 import { z } from 'zod'
 
 export const IngredientSchema = z.object({
-    name: z.string(),
-    quantity: z.string(),
-    id: z.number(),
+    name: z.string().min(2),
+    quantity: z.string().min(1),
+    id: z.string(),
 })
 
 export const IngredientsSchema = z
     .object({
-        name: z.string(),
-        quantity: z.string(),
-        id: z.number(),
+        name: z.string().min(2),
+        quantity: z.string().min(1),
+        id: z.string(),
     })
     .array()
 

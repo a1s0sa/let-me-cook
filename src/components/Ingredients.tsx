@@ -1,6 +1,7 @@
 'use client'
 import IngredientItem from './IngredientItem'
 import { toast } from 'sonner'
+import { v4 as uuid } from 'uuid'
 import { motion } from 'motion/react'
 import { useRecipeStore } from '@/store/recipeStore'
 
@@ -11,7 +12,7 @@ export default function Ingredients() {
         const newItem = {
             name: '',
             quantity: '',
-            id: temp.length + 1,
+            id: uuid(),
         }
 
         toast.success('Added new ingredient!', {

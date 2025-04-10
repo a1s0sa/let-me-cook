@@ -12,7 +12,7 @@
 
 }
 
-.cta, .recipe > h2, .ingredients > h2, .recipe-placeholder, .recipe--name{
+.cta, .recipe > h2, .ingredients > h2, .recipe-placeholder, .recipe--name, .recommends > h3{
   font-family: var(--pacifico);
 }
 
@@ -29,5 +29,20 @@ h1, h2, h3 {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loader {
+    animation: logo-spin infinite 1s linear;
   }
 }

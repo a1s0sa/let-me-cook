@@ -14,7 +14,7 @@ export default function Home() {
                 </p>
                 <Link href="/app">
                     <button className="font-bold flex items-center bg-[#A37C40] text-white hover:bg-[#8a6836] px-6 py-3 text-lg rounded-2xl shadow-lg">
-                        Get Cooking <ArrowRight  />
+                        Get Cooking <ArrowRight />
                     </button>
                 </Link>
             </section>

@@ -9,7 +9,6 @@ import { useRecipeStore } from '@/store/recipeStore'
 import { useState } from 'react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
-import { fetchYoutube } from '@/lib/fetchVideos'
 
 type ResType = {
     data: Recipes | string
@@ -44,11 +43,20 @@ export default function RecipesComponent() {
                 const temp: string[] = data.data.map((recipe) => {
                     return recipe.youtube_query
                 })
-                const recommendss = await fetchYoutube(temp).then((res) => res)
+                const { recommends } = await fetch('/api/v1/get-recommends', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        queries: temp,
+                    }),
+                }).then((res) => {
+                    if (!res.ok) throw new Error('failed to find recommends')
+                    return res.json()
+                })
 
-                console.log(recommendss)
-
-                setReccomends(recommendss)
+                setReccomends(recommends)
             })
             .catch((err) => {
                 toast.error(`${err.message}`, {

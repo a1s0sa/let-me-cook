@@ -3,7 +3,7 @@ export async function fetchYoutube(queries: string[]): Promise<string[]> {
     try {
         const reqPromises = queries.map((query) =>
             fetch(
-                `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${encodeURIComponent(query)}&type=video&key=${process.env.NEXT_PUBLIC_YOUTUBE_V3_KEY!}`
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${encodeURIComponent(query)}&type=video&key=${process.env.YOUTUBE_V3_KEY!}`
             ).then(async (res) => {
                 if (!res.ok)
                     throw new Error(`Failed to fetch yunno${res.status}`)

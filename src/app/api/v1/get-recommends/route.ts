@@ -21,7 +21,8 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({
             recommends: res,
         })
-    } catch (error) {
+    } catch (err) {
+        console.error(err)
         return NextResponse.json(
             { message: 'failed to fetch' },
             { status: 400 }

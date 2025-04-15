@@ -1,7 +1,7 @@
 'use client'
 import { toast } from 'sonner'
-import { Recipes } from '@/schema/Recipe'
 import clsx from 'clsx'
+import { Recipes } from '@/schema/Recipe'
 import { v4 as uuid } from 'uuid'
 import Loader from './Loader'
 import Carousel from './Carousel'
@@ -38,6 +38,7 @@ export default function RecipesComponent() {
                 if (typeof data.data == 'string') {
                     throw new Error(`${data.data}`)
                 }
+                console.log("dang")
                 setRecipes(data.data)
 
                 const temp: string[] = data.data.map((recipe) => {
@@ -59,16 +60,16 @@ export default function RecipesComponent() {
                 setReccomends(recommends)
             })
             .catch((err) => {
-                toast.error(`${err.message}`, {
+                toast.success(`${err.message}`, {
                     style: {
                         background: '#f4a261',
                         color: '#5e503f',
                     },
                     duration: 5,
                 })
-            })
-
-        setLoading(false)
+            }).finally(()=>
+                setLoading(false)
+        )
     }
     return (
         <div className="flex gap-4 flex-col">
@@ -177,7 +178,7 @@ export default function RecipesComponent() {
             <motion.button
                 onClick={handleFetch}
                 whileTap={{ scale: 1.1 }}
-                className="flex justify-center items-center bg-[#f5b96b] text-[#3d2c2a] font-bold p-2 w-4/5 mx-auto rounded"
+                className={clsx("flex justify-center items-center bg-[#f5b96b] text-[#3d2c2a] font-bold p-2 w-4/5 mx-auto rounded", ingredients.length < 1 && "pointer-events-none")}
             >
                 Let me cook!
                 <Image

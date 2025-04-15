@@ -1,5 +1,6 @@
 'use client'
 import IngredientItem from './IngredientItem'
+import clsx from "clsx"
 import { toast } from 'sonner'
 import { v4 as uuid } from 'uuid'
 import { motion } from 'motion/react'
@@ -33,7 +34,7 @@ export default function Ingredients() {
             <motion.button
                 whileTap={{ scale: 1.1 }}
                 onClick={addIngredient}
-                className="bg-[#f5b96b] text-[#3d2c2a] font-bold p-2 w-4/5 mx-auto rounded"
+                className={clsx("bg-[#f5b96b] text-[#3d2c2a] font-bold p-2 w-4/5 mx-auto rounded")}
             >
                 Add ingredient
             </motion.button>

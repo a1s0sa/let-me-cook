@@ -1,13 +1,13 @@
-FROM node:22-alpine AS builder
+FROM node:20-slim AS builder
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN corepack enable && pnpm install --frozen-lockfile
+RUN npm ci
 
 COPY . .
-RUN pnpm build
+RUN npm run build
 
-FROM node:22-alpine
+FROM node:20-slim
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -17,4 +17,6 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/node_modules ./node_modules
 
-CMD ["node", "node_modules/next/dist/bin/next", "start"]
+EXPOSE 3001
+
+CMD ["node", "node_modules/next/dist/bin/next", "start", "-p", "3001"]
